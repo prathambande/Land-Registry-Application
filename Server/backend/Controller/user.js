@@ -54,7 +54,7 @@ router.post('/register_govt', async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     user.password = await bcrypt.hash(password, salt)
     await user.save()
-    res.status(200).send('Thanks for registering!')
+    res.status(200).send(user);
   } catch (err) {
     console.log(err.message)
     res.status(500).send('Error in Saving')

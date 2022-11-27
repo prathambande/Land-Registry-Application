@@ -35,7 +35,9 @@ class Dashboard extends Component {
 
   componentWillMount = async () => {
     // console.log('token= ' + window.localStorage.getItem('token'))
-    const user = jwtDecode(window.localStorage.getItem('token'))
+    console.log("usser : lol");
+    const user = window.localStorage.getItem('token')
+    console.log("usser : ", user);
     this.setState({ ...user.user })
     // this.setState({ ...user.user })
     const web3 = window.web3

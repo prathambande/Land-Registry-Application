@@ -71,11 +71,12 @@ class Login extends Component {
       password: this.state.password,
     }
     if (this.state.username && this.state.password) {
-      axios.post('http://localhost:3001/login', data).then((response) => {
+      axios.post('http://localhost:3001/register_govt', data).then((response) => {
         if (response.status == 200) {
+          console.log(response);
+          console.log(response.data)
           window.alert('Login Successful')
           window.localStorage.setItem('authenticated', true)
-          console.log(response.data)
           window.localStorage.setItem('token', response.data)
 
           // this.setState({ user: response.data })

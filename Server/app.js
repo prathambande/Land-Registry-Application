@@ -17,7 +17,7 @@ mongoose
   )
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(err))
-var port = process.env.PORT || 3001
+var port = 3001
 
 app.use('/', server)
 
